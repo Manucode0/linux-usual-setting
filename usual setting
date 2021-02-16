@@ -1,0 +1,43 @@
+sudo pacman-mirrors -i -c China -m rank    #manjaro更换国内源
+
+sudo pacman -S fcitx5 fcitx5-qt fcitx5-gtk fcitx5-configtool fcitx5-rime  #安装fcitx5和rime
+sudo vim ~/.xprofile   #修改配置文件，在配置文件内添加下面三行
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS="@im=fcitx5"
+
+sudo pacman -S shadownsocks-qt5
+
+sudo pacman -S zsh vim tmux git gcc
+chsh -s /bin/zsh
+
+-----------------------安装zsh三插件----------------------------------
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh   #手动安装oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+git clone git://github.com/joelthelion/autojump.git    #安装autojump
+cd autojump
+./install.py                    # ./uninstall.py卸载autojump
+
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions      #安装zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting   #装zsh-syntax-highlighting
+
+----------------------修改配置文件~/.zshrc-----------------------------
+sudo vim ~/.zshrc 
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh #在配置文件中添加autojump设置
+
+plugins=(git autojump ghlighting zsh-autosuggestions)              #在配置文件中添加oh-my-zsh自带插件
+
+
+
+--------------------------------------安装vim插件---------------------------------
+mkdir ~/.vim/autoload/
+cd ~/.vim/autoload/
+wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+---------------------------------------------------编辑vim配置文件vimrc----------------------------
+
+
+
+
