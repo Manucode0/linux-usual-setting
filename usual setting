@@ -26,7 +26,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sudo vim ~/.zshrc 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh #在配置文件中添加autojump设置
 
-plugins=(git autojump ghlighting zsh-autosuggestions)              #在配置文件中添加oh-my-zsh自带插件
+plugins=(git autojump zsh-syntax-highlighting  zsh-autosuggestions)              #在配置文件中添加oh-my-zsh自带插件
 
 
 
